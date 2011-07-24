@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Methods for the numerical solution of the ODE</title>
+        <link rel="stylesheet" type="text/css" href="style.css" /> 
+        <script language="javascript" type="text/javascript" src="libs/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" src="libs/jquery.flot.min.js"></script>
+        <script language="javascript" type="text/javascript" src="methods.js"></script>
+        <script language="javascript" type="text/javascript" src="interface.js"></script>
+        <script language="javascript" type="text/javascript">
+            $(function() {
+                $('#graphs').trigger('replot');
+            });
+        </script>
+     </head>
+    <body>
+        <h1>Methods for the numerical solution of the ODE</h1>
+        <p id="problem">
+            y' = 50y(x - 0.6)(x - 0.85)<br />
+            y(0) = 0.1
+        </p>
+        <div id="graphs"></div>
+        <div id="interface">
+            <ul id="methods">
+                <li method="Euler">Euler method</li>
+                <li method="BackwardEuler">Backward Euler method</li> 
+                <li method="Cauchy">Cauchy method</li> 
+                <li method="RungeKutta4">Fourth-order Runge–Kutta method</li> 
+                <li method="Adams4">Fourth-order Adams method</li> 
+                <li method="Taylor2">Second-order Taylor method</li> 
+                <li method="Taylor3">Third-order Taylor method</li> 
+            </ul>
+            <hr />
+            <p>
+                <label for="step">Step (number between 0.0001 and 0.25):</label>
+                <input id="step" type="text">
+            </p>
+        </div>
+    </body>
+</html>
